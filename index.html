@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+  </head>
+  <body>
+    <form id="myForm" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="protocol">Protocolo: </label>
+        <input
+          type="text"
+          id="protocol"
+          name="protocol"
+          placeholder="GPXXXTXXX"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="user">Usuário: </label>
+        <select name="user" id="user">
+          <option value="12346">John</option>
+          <option value="78988">Tony</option>
+          <option value="987465">Walter</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <label for="xml">Arquivo XML:</label>
+        <input type="file" name="xml_file" accept=".xml">
+      </div>
+      <br />
+    <div>
+        <label for="pdf">Arquivo PDF:</label>
+        <input type="file" name="pdf_file" accept=".pdf">
+      </div>
+      <br />
+      <div>
+        <input type="reset" />
+      </div>
+      <br />
+      <div>
+        <input type="submit" />
+      </div>
+    </form>
+    <script src="static/js/script.js"></script>
+  </body>
+</html>
