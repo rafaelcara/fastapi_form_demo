@@ -1,0 +1,109 @@
+/* Reset / base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+body {
+  display: flex;
+  align-items: center;              /* centraliza verticalmente */
+  justify-content: center;          /* centraliza horizontalmente */
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #f6f7fb;
+  color: #0f172a;
+  line-height: 1.4;
+  padding: 24px;
+}
+
+/* Card do formulário */
+form#myForm {
+  width: min(520px, 94vw);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  padding: 22px;
+  display: grid;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Cada linha (label + controle) */
+form#myForm > div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Label alinhado à esquerda com largura fixa */
+form#myForm label {
+  width: 120px;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+/* Inputs, selects e file input */
+form#myForm input[type="text"],
+form#myForm select,
+form#myForm input[type="file"] {
+  flex: 1;
+  min-width: 0; /* para evitar overflow em telas pequenas */
+  padding: 10px 12px;
+  border: 1px solid #e6e9ef;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fbfdff;
+  transition: border-color .12s ease, box-shadow .12s ease;
+}
+
+/* foco acessível */
+form#myForm input[type="text"]:focus,
+form#myForm select:focus,
+form#myForm input[type="file"]:focus {
+  outline: none;
+  border-color: #7c3aed66; /* tom suave de destaque */
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.08);
+}
+
+/* Botões */
+form#myForm input[type="submit"],
+form#myForm input[type="reset"] {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  min-width: 110px;
+}
+
+/* Estilo primário / envio */
+form#myForm input[type="submit"] {
+  background: linear-gradient(180deg,#7c3aed,#5b21b6);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(92, 33, 187, 0.18);
+  border-color: rgba(0,0,0,0.04);
+}
+
+/* Reset com aparência neutra */
+form#myForm input[type="reset"] {
+  background: #fff;
+  color: #334155;
+  border: 1px solid #e6e9ef;
+}
+
+/* Hover states */
+form#myForm input[type="submit"]:hover { transform: translateY(-1px); }
+form#myForm input[type="reset"]:hover  { background: #f8fafc; }
+
+/* Centralizar botões em uma linha */
+form#myForm > div:last-of-type,
+form#myForm > div:nth-last-child(2) {
+  justify-content: flex-end;
+}
+
+/* Espaçamento entre campos em telas pequenas (stack) */
+@media (max-width: 420px) {
+  form#myForm label { width: 100%; margin-bottom: 6px; }
+  form#myForm > div { flex-direction: column; align-items: stretch; }
+  form#myForm input[type="submit"],
+  form#myForm input[type="reset"] { width: 100%; min-width: 0; }
+}
